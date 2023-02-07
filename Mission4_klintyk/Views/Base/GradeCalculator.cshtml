@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<!--Call the correct model-->
+@model GradeCalculatorModel;  
+<!-- A "Grade Calculator" form that takes as input a percentage scored for each grade category listed in the syllabus-->
+
+<h2>Grade Calculator: </h2>
+<h4>Input a percentage scored for each of the following categories: </h4>
+<div class="container">
+    <div class="box1">
+        <form method="post">
+            <label>Assignments: </label>
+            <input asp-for="Assignments" id="gr_assignment" /><br />
+            <label>Quizzes: </label>
+            <input asp-for="Quizzes" id="gr_quiz" /><br />
+            <label>Group Projects: </label>
+            <input asp-for="GroupProjects" id="gr_grp" /><br />
+            <label>Intex: </label>
+            <input asp-for="Intex" id="gr_intex" /><br />
+            <label>Midterm Exam: </label>
+            <input asp-for="Midterm" id="gr_midterm" /><br />
+            <label>Final Exam: </label>
+            <input asp-for="Final" id="gr_final" /><br /><br />
+            <input type="submit" value="Calculate" id="btn_calc" />
+        </form>
+        <div>
+
+            <!-- div to display the validation errors should there be any-->
+            <div asp-validation-summary="All"></div>"
+
+        </div>
+    </div>
+    <div class="box2">
+        <h3 id="display"></h3>
+    </div>
+</div>
